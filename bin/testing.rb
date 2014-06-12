@@ -1,7 +1,10 @@
-require_relative '../lib/car.rb'
+require_relative '../lib/used_car.rb'
 
-zola = Car.new("Volvo", "Red", 2007, 30000, 1500)
+newzola = Car.new("Volvo", "Red", 2007, 30000, 1500)
+puts newzola.value
 
-puts zola.value
+oldzola = UsedCar.new("Volvo", "Red", 2007, 30000, 1500)
+puts oldzola.value
 
-puts zola.price
+puts oldzola.add_mileage(14000)
+
