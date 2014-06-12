@@ -15,3 +15,5 @@ scrape = Damage.new(1000, "I might have driven into a curb.")
 
 oldzola.add_damage(scrape)
 puts oldzola.value
+
+binding.pry
