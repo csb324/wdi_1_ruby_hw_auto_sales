@@ -1,0 +1,33 @@
+use an array for adding cars to lot
+
+use a hash for adding damage to used cars
+
+car_lot < cars < used cars < damages
+
+
+
+
+
+TO DO LIST
+
+make a car
+  a car has a make, model, year, MSRP, and markup
+  from that stuff, we can figure out its value
+  from THAT we can figure out the price
+
+make a used car
+  it's like a car
+  it has a mileage
+  it might/might not have damage -- damage causes more depreciation
+  value and price are different because of mileage and damage
+
+make damage
+  damage has a description and a cost
+
+make car lot
+  has a name
+  has a bunch of cars
+  can retrieve total price of all cars on lot
+  can retrieve list of cars with year == 2008, make == Ford, etc
+
+
