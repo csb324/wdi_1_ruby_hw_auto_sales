@@ -10,16 +10,21 @@ class Car
     @year = year
     @msrp = msrp
     @markup = markup
-    @value = age_depreciation(year, msrp)
+    @value = age_depreciation(msrp, year)
     @price = @value + markup
   end
 
-  def age_depreciation(car_year, msrp)
-    value = msrp
-    (Date.today.year - car_year).times do
-      value = 0.95 * value
+  def depreciation(startvalue, rate, num_times)
+    value = startvalue
+    num_times.times do
+      value = (1 - rate) * value
     end
     value
+  end
+
+  def age_depreciation(msrp, car_year)
+    years_old = Date.today.year - car_year
+    depreciation(msrp, 0.05, years_old)
   end
 
 end
