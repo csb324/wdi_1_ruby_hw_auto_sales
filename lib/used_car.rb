@@ -3,12 +3,10 @@ require_relative 'car'
 class UsedCar < Car
 
   attr_accessor :damages
-  attr_reader :mileage
 
   def initialize(make, color, year, msrp, markup)
     super
-    @mileage = mileage
-    @damages = damages
+    @damages = []
   end
 
   def add_mileage(mileage)
@@ -17,6 +15,11 @@ class UsedCar < Car
 
   def mileage_depreciation(value, mileage)
     depreciation(value, 0.000001, mileage)
+  end
+
+  def add_damage(damage)
+    @damages.push(damage)
+    @value = (@value - damage.cost)
   end
 
 end
