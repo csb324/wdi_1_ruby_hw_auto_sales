@@ -6,7 +6,7 @@ class Car
 
   def initialize(make, color, year, msrp, markup)
     @make = make
-    @color = color
+    @color = color.downcase
     @year = year
     @msrp = msrp
     @markup = markup

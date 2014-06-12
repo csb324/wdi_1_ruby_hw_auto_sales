@@ -19,10 +19,14 @@ oldzola.add_damage(currently_on_fire)
 puts newzola.price
 puts oldzola.price
 
-best_lot_ever = CarLot.new("such an amazing lot")
+parking = CarLot.new("such an amazing lot")
 
-best_lot_ever.add_car(newzola)
-puts best_lot_ever.value
+parking.add_car(newzola)
 
-best_lot_ever.add_car(oldzola)
-puts best_lot_ever.value
+parking.add_car(oldzola)
+
+parking.add_car(Car.new("Fiat", "Yellow", 2009, 25000, 1669))
+
+
+puts parking.cars
+puts "Here's a car like that! " + parking.color_find("yellow").map{ |car| car.inspect }.join(", ")

@@ -11,5 +11,12 @@ class CarLot
     @cars.push(car)
     @value += car.price
   end
+
+  def color_find(color)
+    @cars.select do |car|
+      car.color == color
+    end
+  end
+
 end
 
