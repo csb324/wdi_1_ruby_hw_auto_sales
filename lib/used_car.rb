@@ -9,14 +9,13 @@ class UsedCar < Car
     @damages = []
   end
 
-  def recalc_price
+  def price
     @price = @value + @markup
   end
 
   def add_mileage(mileage)
     @mileage = mileage
     @value = mileage_depreciation(@value, mileage)
-    @price = recalc_price
   end
 
   def mileage_depreciation(value, mileage)
@@ -26,7 +25,6 @@ class UsedCar < Car
   def add_damage(damage)
     @damages.push(damage)
     @value = (@value - damage.cost)
-    @price = recalc_price
   end
 
 end
