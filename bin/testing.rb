@@ -29,10 +29,8 @@ puts
 puts
 
 parking.add_car(newzola)
-puts parking.value
 
 parking.add_car(oldzola)
-puts parking.value
 
 parking.add_car(Car.new("Fiat", "Yellow", 2009, 25000, 1669))
 

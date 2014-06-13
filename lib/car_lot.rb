@@ -13,7 +13,7 @@ class CarLot
   def value
     @value = 0
     @cars.each do |car|
-      if car.sold
+      if !car.sold
         @value += car.price 
       end     
     end
@@ -27,6 +27,7 @@ class CarLot
         @revenue += car.price
       end        
     end
+    revenue
   end
 
 # here begins the most repetitive and irritating part of this code
