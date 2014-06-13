@@ -30,6 +30,25 @@ class CarLot
     @revenue
   end
 
+  # find('make', 'Ford')
+  def find_freaky(prop, value)
+    @cars.select do |car|
+      # car.send(:make) == value 
+      car.send(prop.to_sym) == value
+    end
+  end
+
+  # find('make', 'Ford')
+  def find(prop, value)
+    @cars.select do |car|
+      if prop == 'make'
+        car.make == value
+      elsif prop == 'year'
+        car.make == value        
+      end
+    end
+  end
+  
 # here begins the most repetitive and irritating part of this code
 # i wanted to make it better! i tried! but to no avail.
   def color_find(color)

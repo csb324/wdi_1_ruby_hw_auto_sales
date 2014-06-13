@@ -11,7 +11,7 @@ class Car
     @year = year
     @msrp = msrp
     @markup = markup
-    @value = age_depreciation(msrp, year)
+    @value = 0 # age_depreciation(msrp, year)
     @price = @value + markup
     @sold = false
     
