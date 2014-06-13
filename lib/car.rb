@@ -1,8 +1,9 @@
 require 'date'
 
 class Car
+  @@vehicle_id_number = 0
   attr_accessor :markup
-  attr_reader :make, :color, :year, :msrp, :value, :price
+  attr_reader :make, :color, :year, :msrp, :value, :price, :vehicle_id
 
   def initialize(make, color, year, msrp, markup)
     @make = make
@@ -12,6 +13,9 @@ class Car
     @markup = markup
     @value = age_depreciation(msrp, year)
     @price = @value + markup
+    
+    @@vehicle_id_number += 1
+    @vehicle_id = @@vehicle_id_number
   end
 
   def depreciation(startvalue, rate, num_times)
