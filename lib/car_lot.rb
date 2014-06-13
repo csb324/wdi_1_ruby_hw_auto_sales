@@ -27,7 +27,7 @@ class CarLot
         @revenue += car.price
       end        
     end
-    revenue
+    @revenue
   end
 
 # here begins the most repetitive and irritating part of this code
