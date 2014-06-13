@@ -27,4 +27,5 @@ class UsedCar < Car
     @value = (@value - damage.cost)
   end
 
+
 end

@@ -3,7 +3,7 @@ require 'date'
 class Car
   @@vehicle_id_number = 0
   attr_accessor :markup
-  attr_reader :make, :color, :year, :msrp, :value, :price, :vehicle_id
+  attr_reader :make, :color, :year, :msrp, :value, :price, :vehicle_id, :sold
 
   def initialize(make, color, year, msrp, markup)
     @make = make
@@ -13,6 +13,7 @@ class Car
     @markup = markup
     @value = age_depreciation(msrp, year)
     @price = @value + markup
+    @sold = false
     
     @@vehicle_id_number += 1
     @vehicle_id = @@vehicle_id_number
@@ -29,6 +30,11 @@ class Car
   def age_depreciation(msrp, car_year)
     years_old = Date.today.year - car_year
     depreciation(msrp, 0.05, years_old)
+  end
+
+
+  def sell
+    @sold = true
   end
 
 end

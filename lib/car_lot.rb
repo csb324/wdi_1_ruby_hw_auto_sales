@@ -1,7 +1,5 @@
-
-
 class CarLot  
-  attr_reader :name, :value, :cars
+  attr_reader :name, :value, :cars, :revenue
 
   def initialize(name)
     @name = name
@@ -15,11 +13,21 @@ class CarLot
   def value
     @value = 0
     @cars.each do |car|
-      @value += car.price      
+      if car.sold
+        @value += car.price 
+      end     
     end
     @value
   end
 
+  def revenue
+    @revenue = 0
+    @cars.each do |car|
+      if car.sold
+        @revenue += car.price
+      end        
+    end
+  end
 
 # here begins the most repetitive and irritating part of this code
 # i wanted to make it better! i tried! but to no avail.
